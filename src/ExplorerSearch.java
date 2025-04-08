@@ -37,6 +37,17 @@ public class ExplorerSearch {
         
     }
 
+    public static List<int[]> possibleMoves(int[][] island, int[]current){
+        int curR = current[0];
+        int curC = current[1];
+
+        List<int[]> moves = new ArrayList<>();
+
+        return moves;
+
+
+    }
+
 
     // find the starting location of the explorer.
     // if explorer not found, throw exception.
