@@ -83,5 +83,32 @@ public class ExplorerSearchTest {
         assertEquals(4, moves.size());
     }
 
+    @Test public void testPossibleMoves_NoUpMove() {
+        int[][] island = {
+                {0, 1, 1},
+                {1, 1, 1},
+                {1, 1, 1}
+        };
+
+        int[] location = ExplorerSearch.explorerLocation(island);
+        List<int[]> moves = ExplorerSearch.possibleMoves(island, location);
+        assertEquals(2, moves.size());
+    }
+
+    @Test public void testPossibleMoves_NoDownMove() {
+        int[][] island = {
+                {1, 1, 1},
+                {1, 1, 1},
+                {0, 1, 1}
+        };
+
+        int[] location = ExplorerSearch.explorerLocation(island);
+        List<int[]> moves = ExplorerSearch.possibleMoves(island, location);
+        assertEquals(2, moves.size());
+    }
+
+
+
+
     // Come up with varied cases
 }
