@@ -56,7 +56,7 @@ public class ExplorerSearch {
         int newR = curR - 1;
         int newC = curC;
 
-        if(newR >= 0 && island[newR][newC] != 2 || island[newR][newC] != 3){
+        if(newR >= 0 && island[newR][newC] != 2 && island[newR][newC] != 3){
             moves.add(new int[] {newR, newC});
         }
 
@@ -65,7 +65,7 @@ public class ExplorerSearch {
         newR = curR + 1;
         newC = curC;
 
-        if(newR < island.length && island[newR][newC] != 2 || island[newR][newC] != 3 ){
+        if(newR < island.length && island[newR][newC] != 2 && island[newR][newC] != 3 ){
             moves.add(new int[] {newR, newC});
         }
 
@@ -74,7 +74,7 @@ public class ExplorerSearch {
         newR = curR;
         newC = curC - 1;
 
-        if(newC >= 0 && island[newR][newC] != 2 || island[newR][newC] != 3){
+        if(newC >= 0 && island[newR][newC] != 2 && island[newR][newC] != 3){
             moves.add(new int[] {newR, newC});
         }
 
@@ -83,7 +83,7 @@ public class ExplorerSearch {
         newR = curR;
         newC = curC + 1;
 
-        if(curC < island[0].length && island[newR][newC] != 2 || island[newR][newC] != 3){
+        if(curC < island[0].length && island[newR][newC] != 2 && island[newR][newC] != 3){
             moves.add(new int[] {newR, newC});
         }
 
