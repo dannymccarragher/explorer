@@ -71,7 +71,21 @@ public class ExplorerSearch {
 
         //LEFT
 
+        newR = curR;
+        newC = curC - 1;
+
+        if(newC >= 0 && island[newR][newC] != 2 || island[newR][newC] != 3){
+            moves.add(new int[] {newR, newC});
+        }
+
         //RIGHT
+
+        newR = curR;
+        newC = curC + 1;
+
+        if(curC < island[0].length && island[newR][newC] != 2 || island[newR][newC] != 3){
+            moves.add(new int[] {newR, newC});
+        }
 
         return moves;
 
