@@ -40,16 +40,16 @@ public class ExplorerSearch {
 
     // find the starting location of the explorer.
     // if explorer not found, throw exception.
-    public static int[] explorerLoaction(int[][] island){
+    public static int[] explorerLocation(int[][] island){
         for(int row = 0; row < island.length; row++){
-            for(int col = 0; col < row < island[row].length; col++){
+            for(int col = 0; col < island[row].length; col++){
                 if(island[row][col] == 0){
-                    return new int[][] {row , col};
+                    return new int[] {row , col};
                 }
             }
         }
 
-        throw new illegalArgumentException("Explorer Not Found!");
+        throw new IllegalArgumentException("No Explorer Found");
 
     }
 }
