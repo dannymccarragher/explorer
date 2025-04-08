@@ -16,5 +16,38 @@ public class ExplorerSearchTest {
     }
 
     // Add more tests here!
+
+    @Test
+    public void testExplorerLocation_validInput(){
+        int[][] island = {
+                {1,1,1,3,1,1},
+                {3,2,3,1,3,1},
+                {1,1,1,1,3,3},
+                {3,1,2,1,0,1},
+                {1,1,1,2,1,1},
+        };
+
+        int[] location = {3, 4};
+        int[] actual = ExplorerSearch.explorerLocation(island);
+
+        assertArrayEquals(location, actual);
+
+    }
+
+    @Test
+    public void testExplorerLocation_NoExplorer() {
+        int[][] island = {
+                {1,1,1,3,1,1},
+                {3,2,3,1,3,1},
+                {1,1,1,1,3,3},
+                {3,1,2,1,3,1},
+                {1,1,1,2,1,1},
+        };
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            ExplorerSearch.explorerLocation(island);
+        });
+    }
+
     // Come up with varied cases
 }
