@@ -1,6 +1,8 @@
 import static org.junit.Assert.*;
 import org.junit.Test;
 
+import java.util.List;
+
 public class ExplorerSearchTest {
     @Test
     public void testReachableArea_someUnreachable() {
@@ -64,6 +66,21 @@ public class ExplorerSearchTest {
         int[] actual = ExplorerSearch.explorerLocation(island);
 
         assertArrayEquals(location, actual);
+    }
+
+    @Test
+    public void testPossibleMoves_simpleCase() {
+        int[][] island = {
+                {1,1,1},
+                {1,0,1},
+                {1,1,1}
+        };
+        // starts at middle of the matrix
+        int[] explorerLocation = ExplorerSearch.explorerLocation(island);
+
+        List<int[]> moves = ExplorerSearch.possibleMoves(island, explorerLocation);
+
+        assertEquals(4, moves.size());
     }
 
     // Come up with varied cases
