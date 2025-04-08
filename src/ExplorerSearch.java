@@ -32,7 +32,11 @@ public class ExplorerSearch {
         // Implement your method here!
         // Please also make more test cases
         // I STRONGLY RECOMMEND testing some helpers you might make too
-        return -1;
+        int[] explorerStart = explorerLocation(island);
+
+        boolean[][] visited = new boolean[island.length][island[0].length];
+
+        return reachableAreaHelper(island, explorerStart, visited);
 
         
     }
@@ -50,12 +54,10 @@ public class ExplorerSearch {
 
         List<int[]> moves = possibleMoves(island, current);
 
-        int totalArea = 0;
+        int totalArea = 1;
 
         for(int[] move : moves){
-            reachableAreaHelper(island, move, visited);
-            totalArea++;
-
+            totalArea += reachableAreaHelper(island, move, visited);
         }
 
         return totalArea;
@@ -108,7 +110,7 @@ public class ExplorerSearch {
         newR = curR;
         newC = curC + 1;
 
-        if(curC < island[0].length && island[newR][newC] != 2 && island[newR][newC] != 3){
+        if(newC < island[0].length && island[newR][newC] != 2 && island[newR][newC] != 3){
             moves.add(new int[] {newR, newC});
         }
 
