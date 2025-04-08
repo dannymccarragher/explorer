@@ -33,5 +33,23 @@ public class ExplorerSearch {
         // Please also make more test cases
         // I STRONGLY RECOMMEND testing some helpers you might make too
         return -1;
+
+        
+    }
+
+
+    // find the starting location of the explorer.
+    // if explorer not found, throw exception.
+    public static int[] explorerLoaction(int[][] island){
+        for(int row = 0; row < island.length; row++){
+            for(int col = 0; col < row < island[row].length; col++){
+                if(island[row][col] == 0){
+                    return new int[][] {row , col};
+                }
+            }
+        }
+
+        throw new illegalArgumentException("Explorer Not Found!");
+
     }
 }
