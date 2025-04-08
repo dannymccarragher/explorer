@@ -43,6 +43,36 @@ public class ExplorerSearch {
 
         List<int[]> moves = new ArrayList<>();
 
+//        int[][] island = {
+//                {1, 1, 1, 3, 1, 1},
+//                {0, 2, 0, 1, 0, 1},
+//                {1, 1, 1, 1, 3, 3},
+//                {3, 1, 2, 1, 3, 1},
+//                {1, 1, 1, 2, 1, 1},
+//        };
+
+
+        //UP
+        int newR = curR - 1;
+        int newC = curC;
+
+        if(newR >= 0 && island[newR][newC] != 2 || island[newR][newC] != 3){
+            moves.add(new int[] {newR, newC});
+        }
+
+        //DOWN
+
+        newR = curR + 1;
+        newC = curC;
+
+        if(newR < island.length && island[newR][newC] != 2 || island[newR][newC] != 3 ){
+            moves.add(new int[] {newR, newC});
+        }
+
+        //LEFT
+
+        //RIGHT
+
         return moves;
 
 
