@@ -49,5 +49,22 @@ public class ExplorerSearchTest {
         });
     }
 
+    @Test
+    public void testExplorerLocation_MultipleExplorers() {
+        int[][] island = {
+                {1, 1, 1, 3, 1, 1},
+                {0, 2, 0, 1, 0, 1},
+                {1, 1, 1, 1, 3, 3},
+                {3, 1, 2, 1, 3, 1},
+                {1, 1, 1, 2, 1, 1},
+        };
+
+        // It should return the first explorer that is found
+        int[] location = {1, 0};
+        int[] actual = ExplorerSearch.explorerLocation(island);
+
+        assertArrayEquals(location, actual);
+    }
+
     // Come up with varied cases
 }
