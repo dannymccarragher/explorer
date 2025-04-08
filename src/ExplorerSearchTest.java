@@ -107,6 +107,19 @@ public class ExplorerSearchTest {
         assertEquals(2, moves.size());
     }
 
+    @Test
+    public void testPossibleMoves_NoMoves(){
+        int[][] island = {
+                {2, 3, 3},
+                {2, 0, 3},
+                {0, 2, 1}
+        };
+
+        int[] location = ExplorerSearch.explorerLocation(island);
+        List<int[]> moves = ExplorerSearch.possibleMoves(island, location);
+        assertEquals(0, moves.size());
+    }
+
 
 
 
