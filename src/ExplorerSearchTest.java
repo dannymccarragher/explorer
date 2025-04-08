@@ -17,6 +17,34 @@ public class ExplorerSearchTest {
         assertEquals(14, actual);
     }
 
+    @Test
+    public void testReachableArea_NoneReachable(){
+        int[][] island = {
+                {2, 3, 3},
+                {2, 0, 3},
+                {0, 2, 1}
+        };
+
+        int result = ExplorerSearch.reachableArea(island);
+
+        // the answer will be one because it includes the current space
+        assertEquals(1, result);
+
+    }
+
+    @Test
+    public void testReachableArea_AllReachable(){
+        int[][] island = {
+                {1,1,1},
+                {1,0,1},
+                {1,1,1}
+        };
+
+        int result = ExplorerSearch.reachableArea(island);
+
+        assertEquals(9, result);
+    }
+
     // Add more tests here!
 
     @Test
